@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Qute!</title>
+    {#bundle /}
+</head>
+<body>
+    <div class="container">
+        <h1>Hello from HTMX!</h1>
+
+        {#fragment id=name}
+        <div id="hello">
+            Hello {name}!
+            <button class="btn btn-outline-dark" hx-get="/hello-htmx/reversed?val={name}" hx-trigger="click"
+                hx-target="#hello" hx-swap="outerHTML">Reverse</button>
+        </div>
+        {/fragment}
+
+        <hr />
+        Generated at {generatedAt}.
+    </div>
+</body>
+
+</html>
