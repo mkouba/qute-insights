@@ -16,7 +16,7 @@ public class HelloResourceHtmx {
     class Templates {
         static native TemplateInstance hello(String name, LocalDateTime generatedAt);
 
-        static native TemplateInstance hello$name(String name);
+        static native TemplateInstance hello$appInfo();
 
     }
 
@@ -26,9 +26,9 @@ public class HelloResourceHtmx {
     }
 
     @GET
-    @Path("/reversed")
-    public TemplateInstance reversed(@RestQuery String val) {
-        return Templates.hello$name(HelloResourceExtMethod.reversed(val));
+    @Path("/app-info")
+    public TemplateInstance appInfo() {
+        return Templates.hello$appInfo();
     }
 
 }

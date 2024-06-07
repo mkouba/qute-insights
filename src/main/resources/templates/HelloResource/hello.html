@@ -7,7 +7,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello {name}!</h1>
+        <h1>Hello {name.toUpperCase}!</h1>
+        <p>The app is in the {cdi:app.mode} mode and runs for {cdi:app.uptime.toSeconds} seconds.</p>
     </div>
 </body>
 </html>

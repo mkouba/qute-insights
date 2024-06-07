@@ -7,18 +7,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello from HTMX!</h1>
+        <h1>Hello {name} from HTMX!</h1>
 
-        {#fragment id=name}
-        <div id="hello">
-            Hello {name}!
-            <button class="btn btn-outline-dark" hx-get="/hello-htmx/reversed?val={name}" hx-trigger="click"
-                hx-target="#hello" hx-swap="outerHTML">Reverse</button>
+        {#fragment id=appInfo}
+        <div id="appInfo"  hx-get="/hello-htmx/app-info" hx-trigger="every 2s">
+            The app is in the {cdi:app.mode} mode and runs for {cdi:app.uptime.toSeconds} seconds.
         </div>
         {/fragment}
-
+      
         <hr />
-        Generated at {generatedAt}.
+        Page generated at {generatedAt}.
     </div>
 </body>
 
