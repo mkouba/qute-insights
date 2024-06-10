@@ -1,0 +1,1 @@
+Hello {name.toUpperCase}! The app is in the {cdi:app.mode} mode and runs for {cdi:app.uptime.toSeconds} seconds.
