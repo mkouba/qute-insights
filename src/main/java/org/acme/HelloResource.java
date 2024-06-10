@@ -10,8 +10,7 @@ public class HelloResource {
 
     @CheckedTemplate
     class Templates {
-        static native TemplateInstance hello(String name);
-
+         static native TemplateInstance hello(String name);
     }
 
     @GET
@@ -19,6 +18,5 @@ public class HelloResource {
     public TemplateInstance hello(String name) {
         return Templates.hello(name);
     }
-
 
 }

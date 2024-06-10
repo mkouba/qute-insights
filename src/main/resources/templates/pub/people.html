@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Reactive!</title>
+    {#bundle /}
+</head>
+
+<body>
+    <div class="container">
+        <h1>People</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Surname</td>
+                </tr>
+            </thead>
+            {#for person in org_acme_Person:listAllSortedByName}
+            <tr>
+                <td>{person.id}</td>
+                <td>{person.name}</td>
+                <td>{person.surname}</td>
+            </tr>
+            {/for}
+        </table>
+
+        <p>The app is in the {cdi:app.mode} mode and runs for {cdi:app.uptime.toSeconds} seconds.</p>
+    </div>
+</body>
+
+</html>
